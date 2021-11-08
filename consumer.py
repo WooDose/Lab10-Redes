@@ -23,10 +23,13 @@ for message in consumer:
             i = Clean_data(i)
             data.append(i)
 
+    #Estas son las variables a plottear
     temp = float(data[0].split(" ")[-1])
     hum = int(data[1].split(" ")[-1])
     direct = int(data[2].split(" ")[-1])
 
-    print('\n')    
-    print(temp, hum, direct)
-    print('\n')
+
+    ## Aqui iria el codigo del plot
+    ##print('\n')    
+    ##print(temp, hum, direct)
+    ##print('\n')
