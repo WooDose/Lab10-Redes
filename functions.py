@@ -1,6 +1,6 @@
 from random import randint, gauss
 from time import sleep
-
+import json
 
 def truncate(n, type_='int'):
     a = n if n < 100.00 else 100.00
@@ -10,9 +10,11 @@ def truncate(n, type_='int'):
 
 def produce_data():
     data = {
-        'Temperature' : truncate(gauss(50,50/3), 'float'),
+        'Temperature' : round(truncate(gauss(50,50/3), 'float'), 2),
         'Humidity' : truncate(gauss(50,50/3)),
         'Wind direction': randint(0,7)}
+    
+    data = json.dumps(data).encode('utf-8')
     return data
 
 ##while True:
