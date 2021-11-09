@@ -1,4 +1,7 @@
 from functions import b_decode
+from itertools import count
+import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation
 from kafka import KafkaConsumer
 
 
@@ -38,7 +41,23 @@ for message in consumer:
         direct = int(data[2].split(" ")[-1])
 
 
-    print(temp,hum,direct)
+    ##print(temp,hum,direct)
+plt.style.use('fivethirtyeight')
+
+x_vals= []
+y_vals= []
+index=count()
+
+def animate(i):
+    x_vals.append(next(index))
+    y_vals.append(next(temp))
+
+    plt.cla
+    plt.plot(x_vals,y_vals)
+
+ani = FuncAnimation(plt.gcf(), animate, interval=1000)
+plt.tight_layout()
+plt.show()
     ## Aqui iria el codigo del plot
     ##print('\n')    
     ##print(temp, hum, direct)
