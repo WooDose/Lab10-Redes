@@ -45,7 +45,7 @@ def b_decode(bytestr):
 
 
     
-    
+
 
 # while True:
 #    data, data_raw  = produce_data()
