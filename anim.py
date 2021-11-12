@@ -25,10 +25,12 @@ def an(i):
 
     tempx = [a for a in range(len(dfT))]
     hmx = [a for a in range(len(dfH))]
-    print(dfT, tempx, len(dfT), len(tempx))
-    ax.scatter(tempx, dfT)
+    #print(dfT, tempx, len(dfT), len(tempx))
+    #ax.scatter(tempx, dfT)
+    ax.plot(tempx, dfT, '-o')
     
-    ax1.scatter(hmx, dfH)
+    #ax1.scatter(hmx, dfH)
+    ax1.plot(tempx, dfT, '-o')
     #ax.text(len(dfT)-1, str(dfT[-1])+2, "{}%".format(str(dfT[-1])))
     #ax1.text(len(dfH)-1, str(dfH[-1])+2, "{}%".format(str(dfH[-1])))
     ax.set_ylim(0,100)
