@@ -39,11 +39,6 @@ for message in consumer:
         temp, hum, direct = b_decode(message[6].decode())
         print(temp,hum,direct)
 
-        
-
-        
-
-
         t.append(float(temp))
         h.append(int(hum))
         d.append(int(direct))
@@ -87,4 +82,19 @@ for message in consumer:
         d.append(direct)
         cnt += 1
         c.append(cnt)
+
+        f = open('temp.csv', 'w')
+        writer = csv.writer(f)
+        writer.writerow(t)
+        f.close()
+
+        f = open('hum.csv', 'w')
+        writer = csv.writer(f)
+        writer.writerow(h)
+        f.close()
+
+        f = open('time.csv', 'w')
+        writer = csv.writer(f)
+        writer.writerow(c)
+        f.close()
         
